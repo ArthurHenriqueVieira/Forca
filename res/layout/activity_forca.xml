@@ -29,22 +29,35 @@
             android:id="@+id/txtResposta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.25"
+            android:layout_weight="0.61"
             android:gravity="center"
             android:text="_ _ _ _"
             android:textAlignment="center"
             android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/txtTentativas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.25"
+            android:text="Letras falhas:\nA" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="269dp"
                 android:layout_height="78dp"
                 android:gravity="center"
                 android:textAlignment="center"
                 android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/button1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Button" />
 
         </LinearLayout>
     </LinearLayout>
