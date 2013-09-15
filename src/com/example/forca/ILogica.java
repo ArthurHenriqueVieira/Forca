@@ -1,3 +1,4 @@
+package com.example.forca;
 public interface ILogica {
 
 

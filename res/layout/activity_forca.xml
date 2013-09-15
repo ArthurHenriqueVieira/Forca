@@ -23,15 +23,27 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="0.53"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp" >
+
+        <TextView
+            android:id="@+id/txtPontos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:editable="false"
+            android:gravity="right"
+            android:text="Pontos: 0" />
 
         <TextView
             android:id="@+id/txtResposta"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.61"
+            android:editable="false"
             android:gravity="center"
-            android:text="_ _ _ _"
+            android:text="____"
             android:textAlignment="center"
             android:textSize="30sp" />
 
@@ -40,24 +52,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="0.25"
-            android:text="Letras falhas:\nA" />
+            android:editable="false"
+            android:text="Letras usadas:\n" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
             <EditText
+            	android:id="@+id/txtInput"
                 android:layout_width="269dp"
                 android:layout_height="78dp"
                 android:gravity="center"
+                android:maxLength="1"
                 android:textAlignment="center"
                 android:textSize="20sp" />
 
             <Button
-                android:id="@+id/button1"
+                android:id="@+id/btnOk"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="OK" />
 
         </LinearLayout>
     </LinearLayout>
