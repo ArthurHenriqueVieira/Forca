@@ -19,6 +19,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		btnJogar = (Button)findViewById(R.id.btnJogar);
+		btnCreditos = (Button)findViewById(R.id.btnCreditos);
         
         if(btnJogar !=  null) {
         	
@@ -29,6 +30,19 @@ public class MainActivity extends Activity {
 					Intent i = new Intent();
         			i.setClass(getApplicationContext(), Forca.class);
         			startActivity(i);
+					
+				}
+        	});
+        }
+        if(btnCreditos !=  null) {
+        	
+        	btnCreditos.setOnClickListener(new OnClickListener() {
+
+				@Override
+				public void onClick(View arg0) {
+					Intent intent = new Intent();
+        			intent.setClass(getApplicationContext(), Creditos.class);
+        			startActivity(intent);
 					
 				}
         	});
