@@ -32,16 +32,15 @@ public final class R {
         public static final int ic_launcher=0x7f020008;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000b;
-        public static final int btnCreditos=0x7f08000a;
-        public static final int btnJogar=0x7f080008;
-        public static final int btnOk=0x7f080007;
+        public static final int action_settings=0x7f08000a;
+        public static final int btnCreditos=0x7f080009;
+        public static final int btnJogar=0x7f080007;
+        public static final int btnOk=0x7f080006;
         public static final int imgForca=0x7f080001;
-        public static final int textView1=0x7f080009;
-        public static final int txtInput=0x7f080006;
+        public static final int textView1=0x7f080008;
+        public static final int txtInput=0x7f080005;
         public static final int txtPontos=0x7f080003;
         public static final int txtResposta=0x7f080004;
-        public static final int txtTentativas=0x7f080005;
         public static final int viewImgForca=0x7f080000;
         public static final int viewTxtForca=0x7f080002;
     }

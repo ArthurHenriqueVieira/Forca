@@ -47,14 +47,6 @@
             android:textAlignment="center"
             android:textSize="30sp" />
 
-        <TextView
-            android:id="@+id/txtTentativas"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.25"
-            android:editable="false"
-            android:text="Letras usadas:\n" />
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >

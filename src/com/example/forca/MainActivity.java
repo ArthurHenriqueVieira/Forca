@@ -36,7 +36,6 @@ public class MainActivity extends Activity {
 		imgForca = (ImageView)findViewById(R.id.imgForca);
 		txtPontos = (TextView)findViewById(R.id.txtPontos);
 		txtResposta = (TextView)findViewById(R.id.txtResposta);
-		txtTentativas = (TextView)findViewById(R.id.txtTentativas);
 		txtInput = (EditText)findViewById(R.id.txtInput);
 		btnOk = (Button)findViewById(R.id.btnOk);
 		
@@ -109,8 +108,7 @@ public class MainActivity extends Activity {
 	private void refreshData() {
 		imgForca.setImageResource(forca.getImagem());
 		txtPontos.setText("Pontos: " + forca.getPontos());
-		txtResposta.setText(forca.espacaString(forca.getPalavraFormatada()));
-		txtTentativas.setText("Letras usadas:\n" + forca.espacaString(forca.getTentativas()));
+		txtResposta.setText(forca.getPalavraFormatada());
 		txtInput.setText("");
 	}
 	
