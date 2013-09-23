@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:id="@+id/layout_root"
+              android:orientation="horizontal"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:padding="10dp"
+              >
+ 
+    <EditText android:id="@+id/inputText"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/msg">
+    </EditText>
+ 
+    <Button
+        android:id="@+id/bt_ok"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/inputText"
+        android:text="   ok   ">
+    </Button>
+    <Button android:id="@+id/bt_cancel"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@+id/inputText"
+        android:layout_toRightOf="@+id/bt_ok"
+        android:text="cancelar">
+    </Button>
+    
+</RelativeLayout>
