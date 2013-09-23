@@ -1,28 +1,29 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal" >
-
-    <Button
-        android:id="@+id/btnJogar"
-        android:layout_width="68dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical|center_horizontal|top"
-        android:text="JOGAR" />
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal"
+    android:scrollbars="horizontal" >
 
     <TextView
         android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_weight="0.66"
+        android:layout_width="406dp"
+        android:layout_height="wrap_content"
         android:text="Forca"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="50sp" />
 
     <Button
-        android:id="@+id/btnCreditos"
-        android:layout_width="wrap_content"
+        android:id="@+id/btn_jogar"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:layout_weight="0.66"
+        android:text="Jogar" />
 
+    <Button
+        android:id="@+id/btn_ranking"
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom"
+        android:text="Ranking" />
+    
 </LinearLayout>

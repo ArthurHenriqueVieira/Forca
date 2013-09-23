@@ -3,6 +3,7 @@ package com.example.forca;
 import android.os.Bundle;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.Gravity;
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
 	Button btnOk;
 	
 	MinhaLogica forca;
+	DBAdapter pontos;
 	static Context contexto;
 	
 	@Override
@@ -41,6 +43,7 @@ public class MainActivity extends Activity {
 		
 		// Init jogo
 		forca = new MinhaLogica();
+		pontos = new DBAdapter(null);
 		
 		// Atualiza dados do XML
 		refreshData();
@@ -51,6 +54,7 @@ public class MainActivity extends Activity {
 					forca.conferir(txtInput.getText().toString());
 					refreshData();
 					if(forca.getFimDeJogo()) {
+						
 						AlertDialog.Builder builder = new AlertDialog.Builder(contexto);
 						TextView title = new TextView(contexto);
 						TextView msg = new TextView(contexto);
@@ -63,6 +67,7 @@ public class MainActivity extends Activity {
 							msg.setText("A palavra é '" + forca.getPalavra() + "'.\nVocê fez " + forca.getPontos() + ".\n Deseja jogar novamente?");
 							msg.setGravity(Gravity.CENTER);
 							msg.setTextSize(18);
+							
 						} else {
 							title.setText("Errado!");
 							title.setGravity(Gravity.CENTER);
@@ -70,6 +75,7 @@ public class MainActivity extends Activity {
 							msg.setText("A palavra era '" + forca.getPalavra() + "'.\nVocê fez " + forca.getPontos() + ".\n Deseja jogar novamente?");
 							msg.setGravity(Gravity.CENTER);
 							msg.setTextSize(18);
+							
 						}
 						
 						// Aplica o Dialog customizado
@@ -82,12 +88,16 @@ public class MainActivity extends Activity {
 								forca = new MinhaLogica();
 								refreshData();
 							}
+							
 						});
 						
 						builder.setNegativeButton("Não", new DialogInterface.OnClickListener() {
 							@Override
 							public void onClick(DialogInterface dialog, int which) {
-								finish();
+								
+								showCustomDialog();
+								
+								//finish();
 							}
 						});
 						
@@ -112,4 +122,36 @@ public class MainActivity extends Activity {
 		txtInput.setText("");
 	}
 	
+	private void showCustomDialog(){
+		final Dialog dialog = new Dialog(this);
+		 
+		dialog.setContentView(R.layout.custom_dialog);//carregando o layout do dialog do xml
+		dialog.setTitle("Digite seu nome: ");//título do dialog
+		 
+		final Button ok = (Button) dialog.findViewById(R.id.bt_ok);//se atentem ao dialog.
+		final Button cancelar = (Button) dialog.findViewById(R.id.bt_cancel);
+		final EditText editText = (EditText) dialog.findViewById(R.id.inputText);
+
+		 
+		ok.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+		 
+		    pontos.insertRanking(forca.getPontos(), editText.getText().toString());
+		    
+		    finish();
+		    }
+		});
+		
+		cancelar.setOnClickListener(new View.OnClickListener() {
+			public void onClick(View v) {
+				
+				//ação do botão cancelar
+		        dialog.dismiss();//encerra o dialog
+		        finish();
+			}
+		});
+		
+		dialog.show();//mostra o dialog
+		
+	}
 }
